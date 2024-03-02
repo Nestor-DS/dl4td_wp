@@ -26,11 +26,7 @@ Este proyecto se centra en la aplicación de métodos de aprendizaje profundo a 
 
 ## Uso
 
-1. Instala las dependencias utilizando el archivo `requirements.txt`.
-
-    pip install -r requirements.txt
-
-2. Ejecuta el notebook `dptI-I.ipynb` para iniciar el proyecto.
+1. Ejecuta el notebook `dptI-I.ipynb` para iniciar el proyecto.
 
 ## Dependencias
 
