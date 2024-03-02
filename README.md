@@ -42,7 +42,3 @@ Make sure to have the following Python libraries installed:
 ## Contributions
 
 Contributions are welcome! If you find bugs, potential improvements, or have ideas for new features, feel free to open an issue or submit a pull request.
-
-## License
-
-This project is under the [MIT license](LICENSE).
