@@ -1,48 +1,48 @@
 # **deep_tabular-drinking_water_potability-**
-Aplicación de diferentes métodos de deep tabular learning a datasets de problemas del agua usando Python
+Application of different methods of deep tabular learning to water-related problem datasets using Python.
 
-# Proyecto de Deep Tabular Learning para Calidad del Agua
+# Deep Tabular Learning Project for Water Quality
 
-Este proyecto se centra en la aplicación de métodos de aprendizaje profundo a conjuntos de datos tabulares relacionados con la calidad del agua. Se utilizan diferentes enfoques para la exploración de datos, clasificación con Bosques Aleatorios y técnicas de aprendizaje profundo.
+This project focuses on applying deep learning methods to tabular datasets related to water quality. Different approaches are used for data exploration, classification with Random Forests, and deep learning techniques.
 
-## Estructura del Proyecto
+## Project Structure
 
-- **dataExploration**: Módulos y notebooks relacionados con la exploración de datos.
-  - `exploration/data_exploration.py`: Script para la exploración de datos.
-  - `exploration/RandomForestClassifier.py`: Implementación del clasificador de Bosques Aleatorios.
+- **dataExploration**: Modules and notebooks related to data exploration.
+  - `exploration/data_exploration.py`: Script for data exploration.
+  - `exploration/RandomForestClassifier.py`: Implementation of the Random Forest classifier.
 
   Notebooks:
-  - `I-I(data_exploration).ipynb`: Exploración detallada del conjunto de datos.
-  - `II-I(RandomForestClassifier).ipynb`: Implementación y evaluación de Bosques Aleatorios.
+  - `I-I(data_exploration).ipynb`: Detailed exploration of the dataset.
+  - `II-I(RandomForestClassifier).ipynb`: Implementation and evaluation of Random Forests.
 
-- **deep_tabular**: Notebooks relacionados con el aprendizaje profundo tabular.
-  - `I-I(hypercubes).ipynb`: Desarrollo de hiperredes y modelos.
-  - `I-II(Optimization).ipynb`: Optimización de modelos.
-  - `I-III(MetricsEvaluation).ipynb`: Evaluación de métricas de modelos.
+- **deep_tabular**: Notebooks related to deep tabular learning.
+  - `I-I(hypercubes).ipynb`: Development of hypernetworks and models.
+  - `I-II(Optimization).ipynb`: Model optimization.
+  - `I-III(MetricsEvaluation).ipynb`: Evaluation of model metrics.
 
-- `dptI-I.ipynb`: Notebook principal para la ejecución general del proyecto.
-- `drinking_water_potability.csv`: Conjunto de datos sobre la potabilidad del agua.
-- `impute_data.py`: Script para la imputación de datos.
+- `dptI-I.ipynb`: Main notebook for overall project execution.
+- `drinking_water_potability.csv`: Dataset on water potability.
+- `impute_data.py`: Script for data imputation.
 
-## Uso
+## Usage
 
-1. Ejecuta el notebook `dptI-I.ipynb` para iniciar el proyecto.
+1. Use the main notebook `dptI-I.ipynb` to start the project.
 
-## Dependencias
+## Dependencies
 
-Asegúrate de tener instaladas las siguientes bibliotecas de Python:
+Make sure to have the following Python libraries installed:
 
 - Pandas
 - NumPy
 - Matplotlib
 - Seaborn
 - Scikit-learn
-- TensorFlow (para el aprendizaje profundo)
+- TensorFlow (for deep learning)
 
-## Contribuciones
+## Contributions
 
-¡Las contribuciones son bienvenidas! Si encuentras errores, mejoras potenciales o tienes ideas para nuevas características, no dudes en abrir un problema o enviar una solicitud de extracción.
+Contributions are welcome! If you find bugs, potential improvements, or have ideas for new features, feel free to open an issue or submit a pull request.
 
-## Licencia
+## License
 
-Este proyecto está bajo la licencia [MIT](LICENSE).
+This project is under the [MIT license](LICENSE).
