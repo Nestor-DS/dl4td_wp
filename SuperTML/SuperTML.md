@@ -1,8 +1,9 @@
 
 ## Screenshots
 
-![App Screenshot](https://th.bing.com/th/id/OIP.d8e-myEfeHnH3hllfn9P3AAAAA?rs=1&pid=ImgDetMain)
-
+<div align="center">
+    <image src="https://th.bing.com/th/id/OIP.d8e-myEfeHnH3hllfn9P3AAAAA?rs=1&pid=ImgDetMain">
+</div>
 
 ### **SuperTML para dl4td:**
 
