@@ -2,7 +2,7 @@ from PIL import Image, ImageDraw, ImageFont
 import numpy as np
 
 def show_column_position(dat):
-    font = ImageFont.truetype("arial.ttf", size=12)
+    font = ImageFont.truetype("arial.ttf", size=20)
     background = np.array([[0 for _ in range(255)] for _ in range(255)], dtype='uint8')
     image = Image.fromarray(background)
     draw = ImageDraw.Draw(image)
@@ -14,7 +14,7 @@ def show_column_position(dat):
     return np.array(rgb)
 
 def show_column_position_another(dat):
-    font = ImageFont.truetype("arial.ttf", size=12)
+    font = ImageFont.truetype("arial.ttf", size=20)
     background = np.array([[0 for _ in range(255)] for _ in range(255)], dtype='uint8')
     image = Image.fromarray(background)
     draw = ImageDraw.Draw(image)
@@ -27,7 +27,7 @@ def show_column_position_another(dat):
     
 def data_to_image(data):
     data_images = []
-    font = ImageFont.truetype("arial.ttf", size=12)
+    font = ImageFont.truetype("arial.ttf", size=50)
     for dat in data:
         background = np.array([[0 for _ in range(255)] for _ in range(255)], dtype='uint8')
         image = Image.fromarray(background)
@@ -42,7 +42,7 @@ def data_to_image(data):
 
 def data_to_image_another(data):
     data_images = []
-    font = ImageFont.truetype("arial.ttf", size=12)
+    font = ImageFont.truetype("arial.ttf", size=50)
     for dat in data:
         background = np.array([[0 for _ in range(255)] for _ in range(255)], dtype='uint8')
         image = Image.fromarray(background)
