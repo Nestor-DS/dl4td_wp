@@ -27,7 +27,7 @@ def show_column_position_another(dat):
     
 def data_to_image(data):
     data_images = []
-    font = ImageFont.truetype("arial.ttf", size=50)
+    font = ImageFont.truetype("arial.ttf", size=20)
     for dat in data:
         background = np.array([[0 for _ in range(255)] for _ in range(255)], dtype='uint8')
         image = Image.fromarray(background)
