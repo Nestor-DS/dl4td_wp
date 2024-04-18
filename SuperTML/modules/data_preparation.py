@@ -32,10 +32,18 @@ def data_to_image(data):
         background = np.array([[0 for _ in range(255)] for _ in range(255)], dtype='uint8')
         image = Image.fromarray(background)
         draw = ImageDraw.Draw(image)
-        draw.text((32, 32), str(dat[0]), fill='white', font=font)
-        draw.text((32, 160), str(dat[1]), fill='white', font=font)
-        draw.text((160, 32), str(dat[2]), fill='white', font=font)
-        draw.text((160, 160), str(dat[3]), fill='white', font=font)
+        draw.text((40, 190), str(dat[0]), fill='white', font=font)
+        draw.text((120, 190), str(dat[1]), fill='white', font=font)
+        draw.text((190, 190), str(dat[2]), fill='white', font=font)
+        
+        draw.text((40, 120), str(dat[3]), fill='white', font=font)
+        draw.text((120, 120), str(dat[4]), fill='white', font=font)
+        draw.text((190, 120), str(dat[5]), fill='white', font=font)
+        
+        draw.text((40, 40), str(dat[6]), fill='white', font=font)
+        draw.text((110, 40), str(dat[7]), fill='white', font=font)
+        draw.text((190, 40), str(dat[8]), fill='white', font=font)
+        
         rgb = [np.array(image, dtype='uint8') for _ in range(3)]
         data_images.append(rgb)
     return np.array(data_images) / 255
