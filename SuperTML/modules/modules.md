@@ -32,7 +32,4 @@ Para utilizar estos módulos, simplemente importa las funciones necesarias en tu
 
 Si deseas contribuir a este proyecto, siéntete libre de hacerlo creando una solicitud de extracción (pull request) o abriendo un problema (issue) para discutir posibles mejoras o problemas.
 
-## Autor
-
-Estos módulos fueron desarrollados por [Tu Nombre].
 
