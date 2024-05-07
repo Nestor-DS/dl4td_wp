@@ -4,6 +4,22 @@ import torch
 import torch.nn as nn
 
 def train_model(model, dataloaders, dataset_sizes, criterion, optimizer, device, scheduler=None, num_epochs=1):
+    """
+    Función para entrenar un modelo de red neuronal.
+
+    Args:
+        model (torch.nn.Module): Modelo de red neuronal a entrenar.
+        dataloaders (dict): Diccionario que contiene los dataloaders para entrenamiento y validación.
+        dataset_sizes (dict): Diccionario que contiene el tamaño de los conjuntos de datos de entrenamiento y validación.
+        criterion: Función de pérdida.
+        optimizer: Optimizador.
+        device: Dispositivo de cómputo (CPU o GPU) para entrenamiento.
+        scheduler: (Opcional) Scheduler para ajustar la tasa de aprendizaje.
+        num_epochs (int): Número de épocas de entrenamiento (por defecto: 1).
+
+    Returns:
+        model (torch.nn.Module): Modelo entrenado.
+    """
     start_time = time.time()
     
     best_model_weights = copy.deepcopy(model.state_dict())
@@ -67,3 +83,4 @@ def train_model(model, dataloaders, dataset_sizes, criterion, optimizer, device,
     model.load_state_dict(best_model_weights)
     
     return model
+

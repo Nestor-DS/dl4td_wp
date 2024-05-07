@@ -1,51 +1,48 @@
+# pip install imbalanced-learn
+
 import pandas as pd
 from sklearn.experimental import enable_iterative_imputer
 from sklearn.impute import IterativeImputer
 from sklearn.ensemble import IsolationForest
 from sklearn.preprocessing import MinMaxScaler
-
+from imblearn.over_sampling import SMOTE
 
 def clean_data(data):
-    df = data
+    """
+    Limpia y preprocesa los datos, aplicando sobremuestreo con SMOTE para equilibrar las clases.
     
-    # Imputation
+    Args:
+        data (pd.DataFrame): DataFrame con los datos a limpiar.
     
-    # Enable the iterative imputer
+    Returns:
+        df_scaled (pd.DataFrame): DataFrame con los datos limpios, normalizados y clases equilibradas.
+    """
+    # Copia de los datos originales para preservarlos
+    df = data.copy()
+    
+    # Aplicar sobremuestreo con SMOTE para equilibrar las clases
+    X = df.drop(columns=['target_column'])  # Ajusta 'target_column' al nombre de tu columna objetivo
+    y = df['target_column']                  # Ajusta 'target_column' al nombre de tu columna objetivo
+    
+    smote = SMOTE()
+    X_resampled, y_resampled = smote.fit_resample(X, y)
+    
+    # Reconstruir el DataFrame después del sobremuestreo
+    df_resampled = pd.concat([pd.DataFrame(X_resampled, columns=X.columns),
+                              pd.Series(y_resampled, name='target_column')], axis=1)
+    
+    # Imputación de valores faltantes
     imputer = IterativeImputer()
+    df_imputed = pd.DataFrame(imputer.fit_transform(df_resampled), columns=df_resampled.columns)
 
-    # Train the imputer on the data with missing values
-    imputer.fit(df)
-
-    # Transform the data to impute missing values
-    df_imputed = pd.DataFrame(imputer.transform(df), columns=df.columns)
-
-    # Outlier
-
-    # Select only the numeric columns
-    numeric_columns = df_imputed.select_dtypes(include=['float64', 'int64'])
-
-    # Initialize and fit the Isolation Forest model
+    # Detección y eliminación de valores atípicos
     clf = IsolationForest(random_state=0)
-    clf.fit(numeric_columns)
-
-    # Identify outliers (1 for normal values, -1 for outliers)
-    outliers = clf.predict(numeric_columns)
-
-    # Filter only the normal (non-outlier) values
+    outliers = clf.fit_predict(df_imputed.select_dtypes(include=['float64', 'int64']))
     df_cleaned = df_imputed[outliers == 1]
-    
-    # Normalization
-    
-    # Select the numeric features
-    numeric_columns = df_cleaned.select_dtypes(include=['float64', 'int64'])
 
-    # Initialize the MinMaxScaler
+    # Normalización de los datos
     scaler = MinMaxScaler()
-
-    # Scale the numeric features
-    numeric_columns_scaled = scaler.fit_transform(numeric_columns)
-
-    # Create a DataFrame with scaled features
-    df_scaled = pd.DataFrame(numeric_columns_scaled, columns=numeric_columns.columns)
+    df_scaled = pd.DataFrame(scaler.fit_transform(df_cleaned.select_dtypes(include=['float64', 'int64'])), 
+                             columns=df_cleaned.select_dtypes(include=['float64', 'int64']).columns)
     
     return df_scaled

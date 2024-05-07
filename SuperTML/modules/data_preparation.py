@@ -2,6 +2,15 @@ from PIL import Image, ImageDraw, ImageFont
 import numpy as np
 
 def show_column_position(dat):
+    """
+    Crea una imagen para visualizar la posición de las columnas de datos.
+    
+    Args:
+        dat (list): Lista de datos.
+    
+    Returns:
+        np.array: Matriz numpy que representa la imagen.
+    """
     font = ImageFont.truetype("arial.ttf", size=20)
     background = np.array([[0 for _ in range(255)] for _ in range(255)], dtype='uint8')
     image = Image.fromarray(background)
@@ -14,6 +23,15 @@ def show_column_position(dat):
     return np.array(rgb)
 
 def show_column_position_another(dat):
+    """
+    Crea otra imagen para visualizar la posición de las columnas de datos.
+    
+    Args:
+        dat (list): Lista de datos.
+    
+    Returns:
+        np.array: Matriz numpy que representa la imagen.
+    """
     font = ImageFont.truetype("arial.ttf", size=20)
     background = np.array([[0 for _ in range(255)] for _ in range(255)], dtype='uint8')
     image = Image.fromarray(background)
@@ -26,6 +44,15 @@ def show_column_position_another(dat):
     return np.array(rgb)
     
 def data_to_image(data):
+    """
+    Convierte datos en imágenes.
+    
+    Args:
+        data (list): Lista de datos.
+    
+    Returns:
+        np.array: Matriz numpy que representa las imágenes.
+    """
     data_images = []
     font = ImageFont.truetype("arial.ttf", size=20)
     for dat in data:
@@ -49,6 +76,15 @@ def data_to_image(data):
     return np.array(data_images) / 255
 
 def data_to_image_another(data):
+    """
+    Convierte datos en imágenes de otra manera.
+    
+    Args:
+        data (list): Lista de datos.
+    
+    Returns:
+        np.array: Matriz numpy que representa las imágenes.
+    """
     data_images = []
     font = ImageFont.truetype("arial.ttf", size=50)
     for dat in data:
@@ -63,11 +99,10 @@ def data_to_image_another(data):
         data_images.append(rgb)
     return np.array(data_images) / 255
 
-
 if __name__ == '__main__':
     from sklearn.datasets import load_iris
     from PIL import Image
     data = load_iris()
-    img_array = data_to_image(data.data)  # Esta línea podría necesitar una función data_to_image definida
+    img_array = data_to_image(data.data)
     img = Image.fromarray(img_array)
     img.show()
