@@ -21,15 +21,15 @@ def clean_data(data):
     df = data.copy()
     
     # Aplicar sobremuestreo con SMOTE para equilibrar las clases
-    X = df.drop(columns=['target_column'])  # Ajusta 'target_column' al nombre de tu columna objetivo
-    y = df['target_column']                  # Ajusta 'target_column' al nombre de tu columna objetivo
+    X = df.drop(columns=['Potability'])  # Ajusta 'Potability' al nombre de tu columna objetivo
+    y = df['Potability']                  # Ajusta 'Potability' al nombre de tu columna objetivo
     
     smote = SMOTE()
     X_resampled, y_resampled = smote.fit_resample(X, y)
     
     # Reconstruir el DataFrame después del sobremuestreo
     df_resampled = pd.concat([pd.DataFrame(X_resampled, columns=X.columns),
-                              pd.Series(y_resampled, name='target_column')], axis=1)
+                              pd.Series(y_resampled, name='Potability')], axis=1)
     
     # Imputación de valores faltantes
     imputer = IterativeImputer()
