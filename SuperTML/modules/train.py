@@ -3,7 +3,7 @@ import time
 import torch
 import torch.nn as nn
 
-def train_model(model, dataloaders, dataset_sizes, criterion, optimizer, device, scheduler=None, num_epochs=1):
+def train_model(model, dataloaders, dataset_sizes, criterion, optimizer, device, num_epochs, scheduler = None):
     """
     Función para entrenar un modelo de red neuronal.
 
