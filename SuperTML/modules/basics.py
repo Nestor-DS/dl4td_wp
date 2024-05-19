@@ -1,14 +1,32 @@
-import numpy as np
-from pathlib import Path
-import pandas as pd
-from sklearn.metrics import roc_auc_score
+# Librerías ocupadas
 
-# Importaciones específicas de Lumin
+import pandas as pd
+import numpy as np
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# scikit-learn para la manipulación de datos y métricas
+from sklearn.model_selection import train_test_split   # Para dividir los datos en conjuntos de entrenamiento y prueba
+from sklearn.datasets import load_iris                 # Para cargar el conjunto de datos de Iris
+from sklearn.metrics import roc_auc_score              # Para calcular el ROC AUC
+
+# Importar módulos de PyTorch para la creación y entrenamiento de redes neuronales
+import torch                       # Biblioteca PyTorch
+import torch.nn as nn              # Módulo de redes neuronales
+import torch.nn.functional as F    # Funciones de activación y otras operaciones para redes neuronales
+import torch.optim as optim        # Algoritmos de optimización
+from torch.utils.data import DataLoader, TensorDataset  # Para crear datasets y data loaders personalizados
+
+# Importar módulos de imbalanced-learn para manejar el desbalance de clases
+from imblearn.over_sampling import RandomOverSampler
+
+# Importar módulos específicos de Lumin para la configuración de gráficos
 from lumin.plotting.plot_settings import PlotSettings
 
-# Importaciones para la visualización
-import seaborn as sns
-import matplotlib.pyplot as plt
+# Importar módulos adicionales
+from pathlib import Path  # Para manipulación de rutas de archivos
+
 
 # Configuración de estilo de seaborn para la visualización
 sns.set_style("whitegrid")
