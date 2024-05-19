@@ -9,3 +9,6 @@ num_features = model_res.fc.in_features
 
 # Reemplazar la capa de clasificación (fully connected) con una nueva capa lineal para adaptarla a un problema de clasificación con 3 clases
 model_res.fc = nn.Linear(num_features, 3)
+
+#############
+
