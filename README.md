@@ -1,157 +1,62 @@
 # **DEEP TABULAR LEARNING TO ANALYZE DATA SETS**
 
-# **deep_tabular-drinking_water_potability-**
-Application of different deep tabular learning methods to water-related problem datasets using Python in order to find better prediction results.
+## Codigos de Colab:
 
-# Deep Tabular Learning Project for Water Quality
+# **Keras Tuner**
 
-This project focuses on the application of deep learning methods to related tabular datasets in order to find the best possible results. Different approaches are used for data exploration, classification with random forests and deep learning techniques.
-It is intended to find an application to SuperTML - Sun et al., 2019 using data from: "___" . 
+- [Keras Tuner](https://colab.research.google.com/drive/1m29_ro5Gec99015wEWBY0gN9ipNmczRh?usp=sharing)
 
-# Project Structure
+**Resultados:**
 
-## dataExploration
-Modules and notebooks related to data exploration.
+| Model      | Accuracy | Precision | Recall  | F1-score | AUC      |
+| ---------- | -------- | --------- | ------- | -------- | -------- |
+| Best Model | 0.8625   | 0.905405  | 0.79056 | 0.844094 | 0.907207 |
 
-- `exploration/data_exploration.py`: Script for data exploration.
-- `exploration/I-I(data_exploration).ipynb`: Detailed exploration of the dataset.
+---
 
-### Notebooks:
-- `I-I(data_exploration).ipynb`: Detailed exploration of the dataset.
-- `II-I(RandomForestClassifier).ipynb`: Implementation and evaluation of Random Forests.
+# **Keras Tuner 2**
 
-## models
-Notebooks related to model building and evaluation.
+- [Keras Tuner 2](https://colab.research.google.com/drive/1j_NwKaNmTsc4lmoYBSj9_f5-9jaOfLKI?usp=sharing)
 
-- `models/dl4td_keras_tuner_1.ipynb`: Notebook for Keras Tuner model development.
-- `models/dl4td_keras_tuner_2.ipynb`: Another notebook for Keras Tuner model development.
-- `models/dl4td_LDRSKN.ipynb`: Notebook for LDRSKN model development.
-- `models/dl4td_random_forest_1.ipynb`: Notebook for Random Forest model development.
-- `models/dl4td_random_forest_2.ipynb`: Another notebook for Random Forest model development.
-- `models/dl4td-water-M1.ipynb`: Notebook for water model development.
-- `models/MLP_1.ipynb`: Notebook for Multilayer Perceptron model development.
-- `models/MLP_Tuner.ipynb`: Notebook for MLP model tuning.
-- `models/modelsTest.ipynb`: Notebook for testing different models.
-- `models/XGBoost.ipynb`: Notebook for XGBoost model development.
+**Resultados:**
 
-## SuperTML
-Modules and notebooks related to SuperTML.
+| Model      | Accuracy | Precision | Recall   | F1-score | AUC      |
+| ---------- | -------- | --------- | -------- | -------- | -------- |
+| Best Model | 0.66311  | 0.61165   | 0.258197 | 0.363112 | 0.620374 |
 
-- `SuperTML/data_preparation.py`: Script for data preparation.
-- `SuperTML/image_guardada.png`: Image saved for reference.
-- `SuperTML/model.py`: Implementation of SuperTML model.
-- `SuperTML/paper.png`: Image of paper related to SuperTML.
-- `SuperTML/result.ipynb`: Notebook for analyzing results.
-- `SuperTML/SuperTML.md`: Markdown file containing details about SuperTML.
-- `SuperTML/train.py`: Script for training SuperTML model.
+---
 
-## Miscellaneous
-Other files and scripts.
+# **Random Forest**
 
-- `dl4td-water-1.ipynb`: Notebook for water analysis.
-- `impute_data.py`: Script for data imputation.
-- `README.md`: You are here! Overview of the project structure.
+- [Random Forest](https://colab.research.google.com/drive/1Sur69pbRfaW_rZariXwnLHj1J3_ijNrx?usp=sharing)
 
-## Data Files
-Datasets used in the project.
+**Resultados**
 
-- `drinking_water_potability.csv`: Dataset on water potability.
+|              | Precision | Recall | F1-score | Support |
+| ------------ | --------- | ------ | -------- | ------- |
+| Class 0      | 0.84      | 0.86   | 0.85     | 354     |
+| Class 1      | 0.83      | 0.81   | 0.82     | 315     |
+| Accuracy     |           |        | 0.84     | 669     |
+| Macro avg    | 0.84      | 0.83   | 0.83     | 669     |
+| Weighted avg | 0.84      | 0.84   | 0.84     | 669     |
 
+|         | Predicted Class 0 | Predicted Class 1 |
+| ------- | ----------------- | ----------------- |
+| Class 0 | 303               | 51                |
+| Class 1 | 59                | 256               |
 
+---
 
-# Usage
+# **Random Forest Tuning**
 
-The model implementation and scanning initially use a clean dataset, but if your dataset is not clean you can use the `dl4td-water-1.ipynb` or the `impute_data.py`.
+- [**Random Forest Tuning**](https://colab.research.google.com/drive/1tmehgHV5ausGBqixeyBU0mCdNemELaMT?usp=sharing)
 
-# Dependencies
+**Resultados**
 
-Make sure to have the following Python libraries installed:
-
-## Libraries used
-
-## Data manipulation and visualization
-
-- pandas
-- seaborn
-- matplotlib.pyplot
-
-## Data preprocessing and modeling
-
-- pandas
-- sklearn
-- tensorflow.keras
-
-## Model evaluation
-
-- sklearn.metrics
-
-## Others
-
-- joblib
-- numpy
-- PIL
-- torch
-- torchvision
-- dmba.plotDecisionTree
-- tkinter
-- widgets
-- IPython.display
-
-# Visualization and Graphics
-
-- matplotlib.pyplot
-- seaborn
-- cv2
-- mpl_toolkits.mplot3d
-
-
-## Results
-
-# **Summary of Model Implementations:**
-
-**Random Forest Tuning:**
-
-* Precision: 99.1% (for class 0)
-* Recall: 72.35% (for class 1)
-* F1 Score: 72.35%
-* Accuracy: 72.35%
-
-The results demonstrate high precision for class 0 and reasonable recall for class 1. Additionally, the overall accuracy of the model is 72.35%, indicating good overall performance. Furthermore, the results remain stable after hyperparameter tuning.
-
-**Random Forest:**
-
-* Precision: 100% (for class 0)
-* Recall: 74.44% (for class 1)
-* F1 Score: 74.44%
-* Accuracy: 74.44%
-
-While this model exhibits perfect precision for class 0, the recall for class 1 is slightly lower than that of the tuned model, suggesting slightly inferior performance.
-
-**Tune MLP 3:**
-
-* Precision: 64% (for class 0)
-* Recall: 63% (for class 1)
-* F1 Score: 63%
-* Accuracy: 63%
-
-This model has reasonable precision and recall, but its overall performance is lower compared to the Random Forest models.
-
-**Tune MLP 2:**
-
-* Precision: 64% (for class 0)
-* Recall: 63% (for class 1)
-* F1 Score: 63%
-* Accuracy: 63%
-
-This model yields similar results to Tune MLP 3 but ranks slightly lower due to order.
-
-**Tune MLP 1:**
-
-* Precision: 52% (for class 0)
-* Recall: 52% (for class 1)
-* F1 Score: 52%
-* Accuracy: 52%
-
-This model has the lowest precision, recall, and F1 score, indicating inferior performance compared to the other models.
-
-Based on these results, the Random Forest Tuning model is the best choice as it exhibits high precision for class 0, reasonable recall for class 1, and good overall accuracy. Additionally, the results remain consistent after hyperparameter tuning.
+| Model                | Train Accuracy % | Test Accuracy % | Train Log Loss | Test Log Loss | Train ROC AUC | Test ROC AUC |
+| -------------------- | ---------------- | --------------- | -------------- | ------------- | ------------- | ------------ |
+| K-Nearest Neighbor   | 80.65            | 71.51           | 6.974179e+00   | 10.269699     | 0.81          | 0.72         |
+| Logistic Regression  | 53.20            | 48.41           | 1.686778e+01   | 18.595135     | 0.53          | 0.49         |
+| Random Forest        | 100.00           | 83.96           | 2.220446e-16   | 5.782937      | 1.00          | 0.84         |
+| Gaussian Naive Bayes | 55.97            | 54.22           | 1.586969e+01   | 16.501313     | 0.56          | 0.54         |
+| Random Forest Tuned  | 99.27            | 82.71           | 2.619996e-01   | 6.231614      | 0.99          | 0.83         |
