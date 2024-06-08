@@ -1,4 +1,21 @@
+# Clonar
+Para clonar este repositorio ejecutar:
+
+```bash
+git clone https://github.com/Nestor-DS/dl4td_wp.git
+
+cd dl4td_wp
+```
+
 # **DEEP TABULAR LEARNING TO ANALYZE DATA SETS**
+
+- Los modelos se encuentran en la carpeta de **Models**, dentro de esta carpeta hay distintos modelos en libretas de Jupuer. 
+
+- Dentro de la carpeta **"DataExploration"** se encuentra una libreta de Jupiter que sirven para la exploración del dataset
+
+- La implementación de **SuperTML** se encuentra en la carpeta **SuperTML**, dentro del la libreta de Jupiter **"result.ipynb"** se encuentran las implementaiones, esta requiere de los archivos py de la carpeta **modules**.
+
+- Se implemento un modelo de randomForest en una pagina realizada en Dash: [Repositorio de página en Dash](https://github.com/Nestor-DS/DASHDL4TD_)
 
 ## Codigos de Colab:
 
